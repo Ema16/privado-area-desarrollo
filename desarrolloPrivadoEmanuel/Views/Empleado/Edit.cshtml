@@ -1,0 +1,83 @@
+﻿@model desarrolloPrivadoEmanuel.Models.Empleado
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+
+<h4>Empleado</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CodEmpleado" />
+            <div class="form-group">
+                <label asp-for="NombreEmpleado" class="control-label"></label>
+                <input asp-for="NombreEmpleado" class="form-control" />
+                <span asp-validation-for="NombreEmpleado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TelefonoEmpleado" class="control-label"></label>
+                <input asp-for="TelefonoEmpleado" class="form-control" />
+                <span asp-validation-for="TelefonoEmpleado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SueldoBase" class="control-label"></label>
+                <input asp-for="SueldoBase" class="form-control" />
+                <span asp-validation-for="SueldoBase" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NuevoSueldo" class="control-label"></label>
+                <input asp-for="NuevoSueldo" class="form-control" />
+                <span asp-validation-for="NuevoSueldo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EstadoContrato" class="control-label"></label>
+                <input asp-for="EstadoContrato" class="form-control" />
+                <span asp-validation-for="EstadoContrato" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaContrato" class="control-label"></label>
+                <input asp-for="FechaContrato" class="form-control" />
+                <span asp-validation-for="FechaContrato" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EstadoEmpleado" class="control-label"></label>
+                <input asp-for="EstadoEmpleado" class="form-control" />
+                <span asp-validation-for="EstadoEmpleado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaInicioContrato" class="control-label"></label>
+                <input asp-for="FechaInicioContrato" class="form-control" />
+                <span asp-validation-for="FechaInicioContrato" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EstadoAntiguedad" class="control-label"></label>
+                <input asp-for="EstadoAntiguedad" class="form-control" />
+                <span asp-validation-for="EstadoAntiguedad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodPuesto" class="control-label"></label>
+                <select asp-for="CodPuesto" class="form-control" asp-items="ViewBag.CodPuesto"></select>
+                <span asp-validation-for="CodPuesto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+</body>
+</html>

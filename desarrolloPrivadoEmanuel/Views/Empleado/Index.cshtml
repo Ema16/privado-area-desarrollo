@@ -1,0 +1,182 @@
+﻿@model IEnumerable<desarrolloPrivadoEmanuel.Models.Empleado>
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+
+    <link rel="" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+
+    <link rel="" href="https://cdn.datatables.net/fixedheader/3.4.0/css/fixedHeader.dataTables.min.css">
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreEmpleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelefonoEmpleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SueldoBase)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NuevoSueldo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoContrato)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaContrato)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoEmpleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaInicioContrato)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoAntiguedad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodPuestoNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelefonoEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SueldoBase)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NuevoSueldo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoContrato)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaContrato)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaInicioContrato)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoAntiguedad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodPuestoNavigation.CodPuesto)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CodEmpleado">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CodEmpleado">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CodEmpleado">Delete</a>
+            </td>
+        </tr>
+}
+
+
+
+    </tbody>
+
+
+        <div class="full-width panel-content">
+            <form asp-action="empleadoEmpresa" target="_blank">
+
+
+                <button type="submit" class="btn btn-raised btn-info" target><i class="zmdi zmdi-download"></i> &nbsp; GENERAR REPORTE 3<div class="ripple-container"></div></button>
+            </form>
+        </div>
+
+        <br />
+
+        <div class="full-width panel-content">
+            <form asp-action="listaEmpresas" target="_blank">
+
+
+                <button type="submit" class="btn btn-raised btn-info" target><i class="zmdi zmdi-download"></i> &nbsp; GENERAR REPORTE 5<div class="ripple-container"></div></button>
+            </form>
+        </div>
+
+       
+</table>
+
+
+<table id="example" class="display" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Codigo Pedido</th>
+                                    <th>Fecha Pedido</th>
+                                    <th>Nombre</th>
+                                    <th>Estado Pedido</th>
+									<th>NIT</th>
+									<th>Direccion</th>
+									<th>Metodo de Pago</th>
+									<th>Detalles</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+									<th>Codigo Pedido</th>
+									<th>Fecha Pedido</th>
+									<th>Nombre</th>
+									<th>Estado Pedido</th>
+									<th>NIT</th>
+									<th>Direccion</th>
+									<th>Metodo de Pago</th>
+									<th>Detalles</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+
+    <!--Datatables-->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+    <!-- Responsive Datatable-->
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+
+    <!-- Busqueda Datatables-->
+    <script src="https://cdn.datatables.net/fixedheader/3.4.0/js/dataTables.fixedHeader.min.js"></script>
+
+    <!-- SUM()  Datatables-->
+    <script src="https://cdn.datatables.net/plug-ins/1.10.20/api/sum().js"></script>
+
+    <!-- Datetime Datatable-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
+
+</body>
+</html>
+
+<script>
+    $(document).ready(function () {
+        // Mi código de inicialización
+        $("#example").DataTable({
+
+
+        });
+</script>
+
+
+

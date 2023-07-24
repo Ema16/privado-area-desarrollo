@@ -1,0 +1,64 @@
+﻿@model desarrolloPrivadoEmanuel.Models.Empleado
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+
+    <link rel="" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+
+    <link rel="" href="https://cdn.datatables.net/fixedheader/3.4.0/css/fixedHeader.dataTables.min.css">
+</head>
+<body>
+
+
+        <div class="full-width panel-content">
+        <form asp-action="contratos1" target="_blank">
+            <div class="form-group">
+                <label asp-for="CodEmpleado" class="control-label"></label>
+                <select asp-for="CodEmpleado" class="form-control" asp-items="ViewBag.CodEmpleado"></select>
+            </div>
+
+                <button type="submit" class="btn btn-raised btn-info" target><i class="zmdi zmdi-download"></i> &nbsp; GENERAR REPORTE 4<div class="ripple-container"></div></button>
+            </form>
+        </div>
+
+
+    </table>
+
+
+    <!--Datatables-->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+    <!-- Responsive Datatable-->
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+
+    <!-- Busqueda Datatables-->
+    <script src="https://cdn.datatables.net/fixedheader/3.4.0/js/dataTables.fixedHeader.min.js"></script>
+
+    <!-- SUM()  Datatables-->
+    <script src="https://cdn.datatables.net/plug-ins/1.10.20/api/sum().js"></script>
+
+    <!-- Datetime Datatable-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
+
+</body>
+</html>
+
+<script>
+    $(document).ready(function () {
+        // Mi código de inicialización
+        $("#example").DataTable({
+
+
+        });
+</script>
+
+
+
